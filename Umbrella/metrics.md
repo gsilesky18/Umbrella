@@ -34,10 +34,8 @@
 * The weather cell icon should be 28 points by 28 points and be vertically and horizontally centered in the cell
 * The weather cell temperature should be 12 point system font and 2 points below the icon. It should be horizontally centered. It should always be rounded to a whole number.
 
-# Enter ZIP Screen
-* The background of the settings screen should be the weather screen blurred with a dark effect. Tapping on the blurred area should dismiss this view.
-* The zip code background should be 15 points from the left and right of the screen. It should be 45 points from the top of the screen. The background is white and has a corner radius of 10 points.
-* The search hourglass should be 10 points from the left of the background and vertically centered in the field.
-* The zip code entry should be vertically centered. It should be 10 points from the left of the search glass and 10 points from the right side of the background field
-* The segmented control should be 25 points from the bottom of the zip field. It should be horizontally centered and 225 points wide. It should use a vibrancy effect.
-* The "Get the weather" button should be centered in the container and 25 points from the bottom of the segmented control. It should use a vibrancy effect.
+## UISearchController
+* The search bar should not be translucent
+* The search bar's background should match the background of the header (cool or warm color)
+* The search bar cancel button should always be white
+* The search controller should not dim the background 

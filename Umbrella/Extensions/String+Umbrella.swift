@@ -10,22 +10,19 @@ import Foundation
 
 extension String {
     
-    /**
-    Returns the URL for the images to be used within the application
-    
-    - parameter highlighted: If the image is filled in or not
-    
-    - returns: The URL to be used within the application
-    */
+    /// Returns the URL for the images to be used within the application
+    ///
+    /// - Parameter highlighted: If the image is filled in or not
+    /// - Returns: The URL to be used within the application
     func nrd_weatherIconURL(highlighted: Bool = false) -> URL? {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
-        urlComponents.host = "nerdery-umbrella.s3.amazonaws.com"
+        urlComponents.host = "codechallenge.nerderylabs.com"
         
         if highlighted {
-            urlComponents.path = "/\(self)-selected.png"
+            urlComponents.path = "/mobile-nat/\(self)-selected.png"
         } else {
-            urlComponents.path = "/\(self).png"
+            urlComponents.path = "/mobile-nat/\(self).png"
         }
         
         return urlComponents.url

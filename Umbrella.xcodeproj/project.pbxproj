@@ -30,8 +30,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		44AEF0281BDA729E0056621F /* landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landscape.png; sourceTree = "<group>"; };
-		44AEF0291BDA729E0056621F /* portrait-warm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "portrait-warm.png"; sourceTree = "<group>"; };
 		44DE82B01BCDF45900A319D2 /* Umbrella.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Umbrella.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44DE82B31BCDF45900A319D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44DE82B81BCDF45900A319D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -43,7 +41,6 @@
 		44DE82CA1BCDF45900A319D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44DE82D61BCDF4BA00A319D2 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		44DE82D81BCDF4C500A319D2 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		44DE82DA1BCDF4FE00A319D2 /* metrics.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = metrics.md; sourceTree = "<group>"; };
 		44DE82DC1BCDF7C800A319D2 /* UIColor+Nerdery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Nerdery.swift"; sourceTree = "<group>"; };
 		44DE82DE1BCDF8EE00A319D2 /* WeatherRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherRequest.swift; sourceTree = "<group>"; };
 		44DE82E01BCDFBBB00A319D2 /* String+Umbrella.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Umbrella.swift"; sourceTree = "<group>"; };
@@ -67,22 +64,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		44AEF0271BDA729E0056621F /* Reference Images */ = {
-			isa = PBXGroup;
-			children = (
-				4402B36E1F545EEF00A2D37E /* portrait-cool-search.png */,
-				4402B36F1F545EEF00A2D37E /* portrait-cool.png */,
-				4402B36D1F545EEF00A2D37E /* portrait-warm-search.png */,
-				44AEF0281BDA729E0056621F /* landscape.png */,
-				44AEF0291BDA729E0056621F /* portrait-warm.png */,
-			);
-			path = "Reference Images";
-			sourceTree = "<group>";
-		};
 		44DE82A71BCDF45900A319D2 = {
 			isa = PBXGroup;
 			children = (
-				44AEF0271BDA729E0056621F /* Reference Images */,
 				44DE82B21BCDF45900A319D2 /* Umbrella */,
 				44DE82C71BCDF45900A319D2 /* UmbrellaTests */,
 				44DE82B11BCDF45900A319D2 /* Products */,
@@ -109,7 +93,6 @@
 				44DE82BA1BCDF45900A319D2 /* Assets.xcassets */,
 				44DE82BC1BCDF45900A319D2 /* LaunchScreen.storyboard */,
 				44DE82BF1BCDF45900A319D2 /* Info.plist */,
-				44DE82DA1BCDF4FE00A319D2 /* metrics.md */,
 			);
 			path = Umbrella;
 			sourceTree = "<group>";

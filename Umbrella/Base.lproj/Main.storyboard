@@ -51,7 +51,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Settings"/>
                                 <connections>
-                                    <action selector="settingsButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="hb5-UD-ZAg"/>
+                                    <segue destination="YI1-vi-hdI" kind="show" id="wwa-Co-UVG"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -64,6 +64,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="164" y="596.85157421289364"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="cKm-H6-v98">
+            <objects>
+                <viewController id="YI1-vi-hdI" customClass="SettingsViewController" customModule="Umbrella" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Z0j-2K-kTr"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wyu-8R-YGN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZNF-zW-a6M">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nk9-rc-H9U">
+                                <rect key="frame" x="20" y="28" width="282" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="RETURN FROM WHENCE I CAME"/>
+                                <connections>
+                                    <segue destination="5HP-Li-T4U" kind="unwind" unwindAction="returnFromSettingsSegue:" id="Ts3-je-bNi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9pf-OA-xHL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5HP-Li-T4U" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="932" y="597"/>
         </scene>
     </scenes>
 </document>

@@ -10,11 +10,11 @@ import Foundation
 
 extension String {
     
-    /// Returns the URL for the images to be used within the application
+    /// Returns the URL for the images to be used within the application.
     ///
-    /// - Parameter highlighted: If the image is filled in or not
-    /// - Returns: The URL to be used within the application
-    func nrd_weatherIconURL(highlighted: Bool = false) -> URL? {
+    /// - Parameter highlighted: If the image is filled in or not.
+    /// - Returns: The URL to be used within the application.
+    func weatherIconURL(highlighted: Bool = false) -> URL? {
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "codechallenge.nerderylabs.com"

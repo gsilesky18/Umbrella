@@ -8,41 +8,40 @@
 
 import Foundation
 
-/**
-*  Struct that builds the URL to send to the server for parsing. Call the getter to URL for the fully qualified URL
-*/
+/// Struct that builds the URL to send to the server for parsing.  Call the getter to URL for the fully qualified URL.
 struct WeatherRequest {
-    /// API Key to be used in the application
-    private let APIKey: String
     
-    /// The zip code to send to the server.
-    var zipCode: String?
+    /// API Key for the request
+    private let apiKey: String
     
-    var URL: Foundation.URL? {
+    /// The location of the request
+    var location: WeatherRequestLocation?
+    
+    /// The requested format of the returned weather
+    var units: WeatherRequestUnits = .imperial
+    
+    /// Fully qualified URL for the request
+    var url: Foundation.URL? {
         get {
-            /// If there is no zip code, there is no url
-            guard let zip = zipCode else {
+            /// If there is no location, there is no url
+            guard let location = location else {
                 return nil
             }
             
             var urlComponents = URLComponents()
             urlComponents.scheme = "https"
-            urlComponents.host = "api.wunderground.com"
-            urlComponents.path = "/api/\(APIKey)/conditions/hourly/q/\(zip).json"
-            
+            urlComponents.host = "api.darksky.net"
+            urlComponents.path = "/forecast/\(apiKey)/\(location.latitude),\(location.longitude)"
+            urlComponents.query = "exclude=minutely,daily,alerts,flags&units=\(units.apiValue)"
             return urlComponents.url
-            
         }
     }
     
-    /**
-    Initializer
-    
-    - parameter apiKey: The API Key for weather underground
-    
-    - returns: The initialized object
-    */
+    /// Initializer
+    ///
+    /// - Parameter APIKey: The API Key for Dark Sky.
+    /// - Returns: The initialized object.
     init(APIKey: String) {
-        self.APIKey = APIKey
+        self.apiKey = APIKey
     }
 }

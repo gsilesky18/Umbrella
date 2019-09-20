@@ -25,6 +25,8 @@
 		D78D52B9233053320022FDE5 /* DarkSkyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D52B8233053320022FDE5 /* DarkSkyResponse.swift */; };
 		D78D52BD2331A7E80022FDE5 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D52BC2331A7E80022FDE5 /* Preferences.swift */; };
 		D78D52BF23331A260022FDE5 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D52BE23331A260022FDE5 /* Location.swift */; };
+		D78D52C22334537A0022FDE5 /* DailyGroupCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D52C12334537A0022FDE5 /* DailyGroupCollectionReusableView.swift */; };
+		D78D52C42334567F0022FDE5 /* WeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78D52C32334567F0022FDE5 /* WeatherCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		D78D52B8233053320022FDE5 /* DarkSkyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkSkyResponse.swift; sourceTree = "<group>"; };
 		D78D52BC2331A7E80022FDE5 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		D78D52BE23331A260022FDE5 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		D78D52C12334537A0022FDE5 /* DailyGroupCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGroupCollectionReusableView.swift; sourceTree = "<group>"; };
+		D78D52C32334567F0022FDE5 /* WeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewCell.swift; sourceTree = "<group>"; };
 		EEFF8AE792572ACE7672B6BD /* Pods_Umbrella.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Umbrella.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -143,6 +147,7 @@
 		44DE82D31BCDF48D00A319D2 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D78D52C0233452EE0022FDE5 /* Cells */,
 				44DE82D81BCDF4C500A319D2 /* MainViewController.swift */,
 				44DE82D61BCDF4BA00A319D2 /* SettingsViewController.swift */,
 			);
@@ -188,6 +193,15 @@
 				D78D52B423304F310022FDE5 /* DarkSkyApi.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		D78D52C0233452EE0022FDE5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D78D52C12334537A0022FDE5 /* DailyGroupCollectionReusableView.swift */,
+				D78D52C32334567F0022FDE5 /* WeatherCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,8 +392,10 @@
 				44DE82D91BCDF4C500A319D2 /* MainViewController.swift in Sources */,
 				44DE82B41BCDF45900A319D2 /* AppDelegate.swift in Sources */,
 				44DE82D71BCDF4BA00A319D2 /* SettingsViewController.swift in Sources */,
+				D78D52C22334537A0022FDE5 /* DailyGroupCollectionReusableView.swift in Sources */,
 				D78D52BF23331A260022FDE5 /* Location.swift in Sources */,
 				D78D52BD2331A7E80022FDE5 /* Preferences.swift in Sources */,
+				D78D52C42334567F0022FDE5 /* WeatherCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

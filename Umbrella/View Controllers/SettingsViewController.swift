@@ -20,17 +20,6 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //Init blur view
-        let blurEffect = UIBlurEffect(style: .dark)
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.translatesAutoresizingMaskIntoConstraints = false
-        //Insert view
-        view.insertSubview(blurView, at: 0)
-        //Add constraints to blur view
-        blurView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
-        blurView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-        //TODO: Add vibrancy effect to segement and button
-        
         //Round corners of input view
         zipCodeOuterView.layer.cornerRadius = 10.0
         //Set segment control with stored preference

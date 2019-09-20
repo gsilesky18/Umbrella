@@ -28,11 +28,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8h-XW-e3E">
-                                        <rect key="frame" x="359" y="18" width="45" height="45"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="Gy9-uR-53a"/>
-                                            <constraint firstAttribute="width" constant="45" id="d4u-Wi-40y"/>
-                                        </constraints>
+                                        <rect key="frame" x="384" y="29.666666666666671" width="20" height="22"/>
                                         <state key="normal" image="settingsCog"/>
                                         <connections>
                                             <action selector="settingsButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d3J-KQ-rwW"/>
@@ -165,7 +161,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="31i-2E-14Q">
-                                            <rect key="frame" x="0.0" y="0.0" width="568" height="2"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="2"/>
                                             <color key="backgroundColor" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="2" id="DDe-6K-Tjt"/>
@@ -178,7 +174,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2I2-zp-2TP">
-                                            <rect key="frame" x="0.0" y="49" width="568" height="1"/>
+                                            <rect key="frame" x="0.0" y="49" width="414" height="1"/>
                                             <color key="backgroundColor" red="0.53333333333333333" green="0.53333333333333333" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="zXs-qC-7Xm"/>
@@ -272,6 +268,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nwb-gh-2ya">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="uy1-ex-hmz">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Dm-3r-ggZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="P0P-8H-9gk">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qjp-aI-B1Q">
+                                                        <rect key="frame" x="-43" y="158" width="225" height="29"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="225" id="cAt-kS-nmJ"/>
+                                                        </constraints>
+                                                        <segments>
+                                                            <segment title="Fahrenheit"/>
+                                                            <segment title="Celsius"/>
+                                                        </segments>
+                                                        <connections>
+                                                            <action selector="unitChanged:" destination="YI1-vi-hdI" eventType="valueChanged" id="Ouh-EL-T6j"/>
+                                                        </connections>
+                                                    </segmentedControl>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gq-dq-wDF">
+                                                        <rect key="frame" x="15" y="211" width="110" height="30"/>
+                                                        <state key="normal" title="Get the weather"/>
+                                                        <connections>
+                                                            <action selector="getWeatherButtonTapped:" destination="YI1-vi-hdI" eventType="touchUpInside" id="CBu-mI-1mP"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="6gq-dq-wDF" firstAttribute="centerX" secondItem="P0P-8H-9gk" secondAttribute="centerX" id="1pV-pu-ads"/>
+                                                    <constraint firstItem="qjp-aI-B1Q" firstAttribute="top" secondItem="P0P-8H-9gk" secondAttribute="top" constant="158" id="WTc-S4-t22"/>
+                                                    <constraint firstItem="qjp-aI-B1Q" firstAttribute="centerX" secondItem="P0P-8H-9gk" secondAttribute="centerX" id="Z64-pG-q8U"/>
+                                                    <constraint firstItem="6gq-dq-wDF" firstAttribute="top" secondItem="qjp-aI-B1Q" secondAttribute="bottom" constant="25" id="vNg-pw-hgJ"/>
+                                                </constraints>
+                                            </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="dark"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHF-pf-XMk">
                                 <rect key="frame" x="15" y="89" width="384" height="44"/>
                                 <subviews>
@@ -297,38 +342,17 @@
                                     <constraint firstItem="S78-4O-SeC" firstAttribute="top" secondItem="qHF-pf-XMk" secondAttribute="top" id="pXA-Ja-24g"/>
                                 </constraints>
                             </view>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qjp-aI-B1Q">
-                                <rect key="frame" x="94.666666666666686" y="158" width="225" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="225" id="LqG-Yg-JFI"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Fahrenheit"/>
-                                    <segment title="Celsius"/>
-                                </segments>
-                                <connections>
-                                    <action selector="unitChanged:" destination="YI1-vi-hdI" eventType="valueChanged" id="Ouh-EL-T6j"/>
-                                </connections>
-                            </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gq-dq-wDF">
-                                <rect key="frame" x="62" y="211" width="290" height="30"/>
-                                <state key="normal" title="Get the weather"/>
-                                <connections>
-                                    <action selector="getWeatherButtonTapped:" destination="YI1-vi-hdI" eventType="touchUpInside" id="CBu-mI-1mP"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="qHF-pf-XMk" firstAttribute="top" secondItem="M1H-Oi-luK" secondAttribute="top" constant="45" id="3wA-Hd-DTE"/>
-                            <constraint firstItem="6gq-dq-wDF" firstAttribute="width" secondItem="ZNF-zW-a6M" secondAttribute="width" multiplier="0.7" id="EIg-vO-BBr"/>
-                            <constraint firstItem="6gq-dq-wDF" firstAttribute="centerX" secondItem="ZNF-zW-a6M" secondAttribute="centerX" id="JcO-qn-xa5"/>
-                            <constraint firstItem="qjp-aI-B1Q" firstAttribute="centerX" secondItem="ZNF-zW-a6M" secondAttribute="centerX" id="Oya-2s-ucC"/>
-                            <constraint firstItem="qHF-pf-XMk" firstAttribute="leading" secondItem="M1H-Oi-luK" secondAttribute="leading" constant="15" id="P5L-oQ-Ihn"/>
-                            <constraint firstItem="qjp-aI-B1Q" firstAttribute="top" secondItem="qHF-pf-XMk" secondAttribute="bottom" constant="25" id="WZt-NL-dDo"/>
-                            <constraint firstItem="M1H-Oi-luK" firstAttribute="trailing" secondItem="qHF-pf-XMk" secondAttribute="trailing" constant="15" id="eSd-D3-0hl"/>
-                            <constraint firstItem="6gq-dq-wDF" firstAttribute="top" secondItem="qjp-aI-B1Q" secondAttribute="bottom" constant="25" id="nJo-nq-2Wx"/>
-                            <constraint firstItem="qHF-pf-XMk" firstAttribute="centerX" secondItem="ZNF-zW-a6M" secondAttribute="centerX" id="rxY-ko-y0A"/>
+                            <constraint firstItem="qHF-pf-XMk" firstAttribute="top" secondItem="ZNF-zW-a6M" secondAttribute="top" constant="89" id="2MG-OK-RAU"/>
+                            <constraint firstAttribute="bottom" secondItem="Nwb-gh-2ya" secondAttribute="bottom" id="FTS-nB-pZj"/>
+                            <constraint firstItem="Nwb-gh-2ya" firstAttribute="top" secondItem="ZNF-zW-a6M" secondAttribute="top" id="Ffb-rX-R8d"/>
+                            <constraint firstAttribute="trailing" secondItem="Nwb-gh-2ya" secondAttribute="trailing" id="Gan-us-8Dm"/>
+                            <constraint firstItem="M1H-Oi-luK" firstAttribute="trailing" secondItem="qHF-pf-XMk" secondAttribute="trailing" constant="15" id="KiD-uC-Tuf"/>
+                            <constraint firstItem="qHF-pf-XMk" firstAttribute="leading" secondItem="M1H-Oi-luK" secondAttribute="leading" constant="15" id="QR2-Jy-A0p"/>
+                            <constraint firstItem="qHF-pf-XMk" firstAttribute="centerX" secondItem="ZNF-zW-a6M" secondAttribute="centerX" id="Tlj-vj-lb0"/>
+                            <constraint firstItem="Nwb-gh-2ya" firstAttribute="leading" secondItem="ZNF-zW-a6M" secondAttribute="leading" id="Y10-PQ-1rT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="M1H-Oi-luK"/>
                     </view>

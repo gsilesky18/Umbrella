@@ -10,26 +10,24 @@ import Alamofire
 import Siesta
 
 class DarkSkyApi: Service {
+    //Singleton instance of API
     static let sharedInstance = DarkSkyApi()
     
-    /// API Key for the request
+    // API Key for the request
     let apiKey = "a913259886e00a06f657f0fd9a6a30ad"
     
-    /// The requested format of the returned weather
-    var units: WeatherRequestUnits = .imperial
-    
     fileprivate init(){
-        
+        //Siesta init
         super.init(baseURL: "https://api.darksky.net", standardTransformers: [.text, .image], networking: Alamofire.SessionManager.default)
         
+        //Mapping from specific paths to models
         let jsonDecoder = JSONDecoder()
-        
         configureTransformer("/forecast/**") {
             try jsonDecoder.decode(DarkSkyResponse.self, from: $0.content)
         }
     }
     
-    func getForcast(latitude: Double, longitude: Double) -> Resource{
-        return resource("/forecast").child(apiKey).child("\(latitude),\(longitude)").withParam("exclude", "minutely,daily,alerts,flags").withParam("units", units.apiValue)
+    func getForcastResource(latitude: Double, longitude: Double) -> Resource {
+        return resource("/forecast").child(apiKey).child("\(latitude),\(longitude)").withParam("exclude", "minutely,daily,alerts,flags").withParam("units", Preferences.sharedInstance.getUnits().apiValue)
     }
 }

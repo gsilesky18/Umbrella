@@ -9,13 +9,13 @@
 import Foundation
 
 /// Return weather conditions in the requested units.
-enum WeatherRequestUnits {
+enum WeatherRequestUnits: Int {
     
     // Return weather in degrees Fahrenheit
-    case imperial
+    case imperial = 0
     
     // Return weather in degrees Celsius
-    case metric
+    case metric = 1
     
     /// Returns the appropriate query string parameter for Dark Sky
     var apiValue: String {

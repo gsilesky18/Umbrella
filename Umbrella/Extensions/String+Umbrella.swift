@@ -13,19 +13,13 @@ extension String {
     /// Returns the URL for the images to be used within the application.
     ///
     /// - Parameter highlighted: If the image is filled in or not.
-    /// - Returns: The URL to be used within the application.
-    func weatherIconURL(highlighted: Bool = false) -> URL? {
-        var urlComponents = URLComponents()
-        urlComponents.scheme = "https"
-        urlComponents.host = "codechallenge.nerderylabs.com"
-        
+    /// - Returns: The URL string to be used within the application.
+    func weatherIconURL(highlighted: Bool = false) -> String {
         if highlighted {
-            urlComponents.path = "/mobile-nat/\(self)-selected.png"
+            return "https://codechallenge.nerderylabs.com/mobile-nat/\(self)-selected.png"
         } else {
-            urlComponents.path = "/mobile-nat/\(self).png"
+            return "https://codechallenge.nerderylabs.com/mobile-nat/\(self).png"
         }
-        
-        return urlComponents.url
     }
     
 }

@@ -30,6 +30,16 @@ class SettingsViewController: UIViewController {
         self.view.addGestureRecognizer(tapGesture)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        zipCodeTextField.becomeFirstResponder()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        zipCodeTextField.resignFirstResponder()
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -48,6 +58,7 @@ class SettingsViewController: UIViewController {
         let location = Preferences.sharedInstance.getLocation()
         if location.latitude != 0, location.longitude != 0 {
             mainViewController?.forecastResource = DarkSkyApi.sharedInstance.getForcastResource(latitude: location.latitude, longitude: location.longitude)
+            mainViewController?.refreshScreen()
         }
     }
     
@@ -70,7 +81,7 @@ class SettingsViewController: UIViewController {
                             Preferences.sharedInstance.saveLocation(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, city: place.locality ?? "", state: place.administrativeArea ?? "")
                             DispatchQueue.main.async {
                                 //Update UI on Main Thread
-                                self?.mainViewController?.cityAndStateLabel.text = "\(String(describing: place.locality)), \(String(describing: place.administrativeArea))"
+                                self?.mainViewController?.refreshScreen()
                                 self?.dismiss(animated: true, completion: nil)
                             }
                         }
@@ -84,12 +95,6 @@ class SettingsViewController: UIViewController {
         }
     }
     
-    func showAlertView(message: String){
-        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
     @objc func tapToClose() {
         //If location is blank then don't close settings
         //Allows user to close if perference are stored
@@ -101,4 +106,9 @@ class SettingsViewController: UIViewController {
         }
     }
     
+    func showAlertView(message: String){
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }

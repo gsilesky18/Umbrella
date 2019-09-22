@@ -8,18 +8,38 @@
 
 import Foundation
 
-struct DarkSkyResponse : Codable {
-    let currently: Forecast
-    let hourly: Hourly
+struct DarkSkyResponse {
+    let currently : Condition
+    let forecasts: [Forecast]
     
-    struct Hourly: Codable {
-        let data: [Forecast]
+    enum CodingKeys: String, CodingKey {
+        case currently
+        case hourly
+    }
+    
+    struct Hourly: Decodable {
+        let data: [Condition]
+        
+        enum CodingKeys: String, CodingKey {
+            case data
+        }
     }
 }
 
-struct Forecast: Codable  {
-    let time: TimeInterval
-    let summary: String
-    let icon: String
-    let temperature: Double
+extension DarkSkyResponse: Decodable {
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        self.currently = try values.decode(Condition.self, forKey: .currently)
+        let hourly = try values.decode(Hourly.self, forKey: .hourly)
+        let gregorian = Calendar(identifier: .gregorian)
+        let byDate: [Date: [Condition]] = hourly.data.reduce(into: [:], { (byDay, condition) in
+            let components = gregorian.dateComponents([.year, .month, .day], from: condition.date)
+            let date = gregorian.date(from: components)!
+            let existing = byDay[date] ?? []
+            byDay[date] = existing + [condition]
+        })
+        self.forecasts = byDate.compactMap { (key: Date, value: [Condition]) -> Forecast in
+            Forecast(date: key, hourlyCondition: value)
+        }
+    }
 }

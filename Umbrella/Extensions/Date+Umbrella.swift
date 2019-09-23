@@ -9,19 +9,7 @@
 import Foundation
 
 extension Date{
-    
-    /// Converts the date to start of the day
-    ///
-    /// - Returns: Date at 12:00:00AM.
-    func beginingOfTheDay() -> Date{
-        let gregorian = Calendar(identifier: .gregorian)
-        var beginingOfTheDayComponents = gregorian.dateComponents([.year, .month, .day], from: self)
-        beginingOfTheDayComponents.hour = 0
-        beginingOfTheDayComponents.minute = 0
-        beginingOfTheDayComponents.second = 0
-        return gregorian.date(from: beginingOfTheDayComponents)!
-    }
-    
+
     /// Replaces the date component with a phrase—such as “today” or “tomorrow”
     ///
     /// - Returns: Returns relative date.

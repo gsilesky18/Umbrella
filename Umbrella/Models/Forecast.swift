@@ -14,11 +14,8 @@ struct Forecast {
     
     init(date: Date, hourlyCondition : [Condition]) {
         self.date = date
-        let beginingOfTheDayDate = self.date.beginingOfTheDay()
         var hourlyCondition = hourlyCondition.sorted { (a, b) -> Bool in
             return a.date < b.date
-            }.filter { (condition) -> Bool in
-                return beginingOfTheDayDate == condition.date.beginingOfTheDay()
         }
         
         if let max = hourlyCondition.max(by: { (a, b) -> Bool in
